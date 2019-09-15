@@ -1,0 +1,45 @@
+/* General styles - put these straight into your stylesheet */
+/* html{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+  } */
+*{
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+ margin: 0;
+  }
+    
+  html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 20px;
+    background-color: #ccc;
+
+  }
+.card{
+    border: 10px dotted rebeccapurple;
+    border-left-style: dashed ;
+    border-right-style: dashed ;
+    height: 350px;
+    width: 500px;
+    background-color: darkorange;
+    border-radius: 1em;
+    border-top-right-radius: 20% 30%;
+}
+article{
+    background-color: rgb(15, 5, 1, 0.3);
+}
+/*标题*/
+
+/*页脚*/
+/*名片主要内容样式*/
+ img{
+    width: 160px;
+    float: right;
+ }

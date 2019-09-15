@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+body{
+   
+}
+#myIput{
+    background-image: url('https://static.runoob.com/images/mix/searchicon.png'); 
+    background-repeat: no-repeat; 
+    background-position: 12px;
+    width: 100%; 
+    font-size: 16px; /* 加大字体 */
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+}
+#myUL{
+    list-style-type: none;
+    padding:0;
+    margin: 0;
+}
+#myUL li a{
+    border: 1px solid #ddd;
+    background-color: #f6f6f6; 
+    padding: 12px; 
+    text-decoration: none;
+    font-size: 18px; 
+    display: block;
+}
+#myUL li a:hover{
+    background-color:#aaaaaa;   
+}
+#myUL li a.header{
+    background-color: #eee;
+    cursor: default;
+}
+
+    </style>
+</head>
+<body>
+    <input type="text" id="myIput" onkeyup="fun()" placeholder="搜索...">
+    <ul id="myUL">
+        <li><a href="#" class="header">A</a></li>
+        <li><a href="#">Adele</a></li>
+        <li><a href="#">Agnes</a></li>
+        
+        <li><a href="#" class="header">B</a></li>
+        <li><a href="#">Billy</a></li>
+        <li><a href="#">Bob</a></li>
+        
+        <li><a href="#" class="header">C</a></li>
+        <li><a href="#">Calvin</a></li>
+        <li><a href="#">Christina</a></li>
+        <li><a href="#">Cindy</a></li>
+    </ul>
+
+</body>
+<script>
+function fun(){
+    var input = document.getElementById("myIput");
+    var filter = input.value.toUpperCase()
+    var li = document.getElementsByTagName("li");
+    //var res = a[1].innerHTML.toUpperCase().indexOf(filter);
+    for(var i = 0; i < li.length; i++){
+        var a = li[i].getElementsByTagName("a")[0];
+        var res = a.innerHTML.toUpperCase().indexOf(filter);
+        if(res > -1)
+           li[i].style.display = "";
+          else
+          li[i].style.display = "none";
+    }
+}
+</script>
+</html>

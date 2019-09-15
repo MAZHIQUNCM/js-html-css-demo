@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// // 普通函数构建一个类
+// function createNewPerson(name){
+//     var obj = {};
+//     obj.name = name;
+//     obj.greeting = function(){
+//         alert("Hi!!I'm"+ this.name + "!!");
+//     }
+//     return obj;
+// }
+// var taylor = createNewPerson("taylor");
+
+// // 构造函数造一个类
+// function Animal(name){
+//     this.name = name;
+//     this.scream = function(){
+//         alert("Hi!!I'm"+ this.name + "!!");
+//     }
+// }
+// var cat = new Animal("cat");
+function Person(first, last, age, gender, interests){
+    this.name = {
+        'first': first,
+        'last': last
+    } 
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+}
+Person.prototype.greeting = function(){
+    alert("Hi~~I'm" + this.name + ".");
+}
+
+/*定义Teacher构造器,继承Person，新增subjects属性*/
+function Teacher(first, last, age, gender, interests, subjects){
+    Person.call(this, first, last, age, gender, interests);
+
+    this.subjects = subjects;
+}
+Teacher.prototype = Object.create(Person.prototype);
+
+</script>
+</html>
